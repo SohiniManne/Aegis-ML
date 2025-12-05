@@ -12,7 +12,6 @@ It acts as a "Sidecar" to a deployed Breast Cancer Prediction model, continuousl
 ## 🏗️ Architecture
 The system follows a decoupled Producer-Consumer pattern to ensure monitoring does not add latency to model inference.
 
-```mermaid
 graph LR
     A[Producer (Model Inference)] -->|Logs Events| B[(SQLite Event Store)]
     C[Scheduler] -->|Triggers| D[Drift Engine]
